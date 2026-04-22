@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rushikesh Zoting — Chief of Staff, Methodology</title>
+<meta name="description" content="Why the fit is unusually tight. A JD-by-JD walk-through for the CoS role at Methodology." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F3EC;
+    --bg-card:#FFFDF8;
+    --bg-soft:#EFE9DD;
+    --ink:#1F2A20;
+    --ink-soft:#3A4438;
+    --ink-mute:#6B6F62;
+    --rule:#22302B;
+    --accent:#E9A9A7;
+    --accent-deep:#C97B78;
+    --accent-soft:#F6DDDB;
+    --sage:#4A6A52;
+    --sage-soft:#D7DFD1;
+    --paper-shadow: 0 1px 0 rgba(31,42,32,0.04), 0 20px 40px -24px rgba(31,42,32,0.18);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter Tight', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(233,169,167,0.14), transparent 38%),
+      radial-gradient(circle at 88% 90%, rgba(74,106,82,0.08), transparent 50%);
+  }
+
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    z-index:1;
+    opacity:0.3;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/><feColorMatrix values='0 0 0 0 0.1  0 0 0 0 0.09  0 0 0 0 0.08  0 0 0 0.4 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  .serif{font-family:'Fraunces', serif;font-optical-sizing:auto}
+  .mono{font-family:'JetBrains Mono', monospace}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+
+  .topbar{
+    border-bottom:1px solid var(--rule);
+    padding:14px 0;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    font-family:'JetBrains Mono', monospace;
+  }
+  .topbar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .topbar-left{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-deep);display:inline-block;animation:pulse 2s infinite ease-in-out}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+  .masthead{
+    padding:72px 0 56px;
+    border-bottom:2px solid var(--rule);
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+    margin-bottom:24px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .eyebrow-line{flex:1;height:1px;background:var(--rule);max-width:80px}
+
+  h1.headline{
+    font-family:'Fraunces', serif;
+    font-weight:400;
+    font-size:clamp(44px, 7vw, 92px);
+    line-height:0.98;
+    letter-spacing:-0.025em;
+    margin-bottom:28px;
+  }
+  h1.headline em{
+    font-style:italic;
+    font-weight:300;
+    color:var(--sage);
+  }
+  h1.headline .underline{
+    position:relative;
+    display:inline-block;
+  }
+  h1.headline .underline::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:4px;
+    height:14px;
+    background:var(--accent-soft);
+    z-index:-1;
+  }
+
+  .sub{
+    font-family:'Fraunces', serif;
+    font-size:clamp(18px, 2vw, 22px);
+    font-weight:300;
+    line-height:1.5;
+    max-width:760px;
+    color:var(--ink-soft);
+    margin-bottom:40px;
+  }
+
+  .applicant-strip{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:0;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .strip-cell{
+    padding:20px 24px 20px 0;
+    border-right:1px solid var(--rule);
+  }
+  .strip-cell:last-child{border-right:none}
+  .strip-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    margin-bottom:6px;
+  }
+  .strip-value{
+    font-family:'Fraunces', serif;
+    font-size:17px;
+    font-weight:500;
+  }
+
+  .thesis{
+    padding:80px 0 72px;
+    border-bottom:1px solid var(--rule);
+  }
+  .section-head{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:32px;
+    margin-bottom:48px;
+    align-items:start;
+  }
+  .section-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.1em;
+    color:var(--accent-deep);
+    padding-top:8px;
+  }
+  h2.section-title{
+    font-family:'Fraunces', serif;
+    font-weight:400;
+    font-size:clamp(32px, 4vw, 48px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+  }
+  h2.section-title em{font-style:italic;color:var(--sage)}
+
+  .thesis-body{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:32px;
+  }
+  .thesis-text p{
+    font-family:'Fraunces', serif;
+    font-size:20px;
+    line-height:1.55;
+    margin-bottom:20px;
+    color:var(--ink-soft);
+    font-weight:300;
+  }
+  .thesis-text p.lead{
+    font-size:24px;
+    color:var(--ink);
+    font-weight:400;
+  }
+  .thesis-text strong{
+    font-weight:500;
+    color:var(--ink);
+    background:var(--accent-soft);
+    padding:1px 6px;
+    border-radius:2px;
+  }
+
+  .pull-quote{
+    margin-top:40px;
+    padding:32px 36px;
+    background:var(--ink);
+    color:var(--bg);
+    position:relative;
+  }
+  .pull-quote::before{
+    content:"";
+    position:absolute;
+    left:-6px;top:-6px;right:-6px;bottom:-6px;
+    border:1px solid var(--ink);
+    z-index:-1;
+  }
+  .pull-quote p{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    font-weight:300;
+    font-style:italic;
+    line-height:1.4;
+    margin:0;
+  }
+  .pull-quote .attr{
+    margin-top:16px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--accent-soft);
+  }
+
+  .jd-map{
+    padding:80px 0;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .map-grid{
+    display:grid;
+    grid-template-columns:repeat(12, 1fr);
+    gap:16px;
+  }
+
+  .map-card{
+    grid-column:span 4;
+    background:var(--bg-card);
+    border:1px solid var(--rule);
+    padding:28px;
+    position:relative;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow:var(--paper-shadow);
+  }
+  .map-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 1px 0 rgba(31,42,32,0.04), 0 28px 48px -24px rgba(31,42,32,0.28);
+  }
+
+  .map-card.wide{grid-column:span 6}
+  .map-card.full{grid-column:span 12}
+
+  .card-badge{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    padding:4px 8px;
+    background:var(--ink);
+    color:var(--bg);
+    margin-bottom:16px;
+  }
+  .card-badge.match{background:var(--sage);color:#fff}
+  .card-badge.built{background:var(--accent-deep);color:#fff}
+
+  .jd-quote{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:15px;
+    line-height:1.4;
+    color:var(--ink-mute);
+    padding:10px 0 10px 14px;
+    border-left:2px solid var(--accent-deep);
+    margin-bottom:18px;
+  }
+
+  .map-card h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:22px;
+    line-height:1.2;
+    margin-bottom:12px;
+    letter-spacing:-0.01em;
+  }
+
+  .map-card p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+
+  .proof-chips{
+    display:flex;flex-wrap:wrap;gap:6px;
+    margin-top:16px;
+  }
+  .chip{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    padding:4px 8px;
+    background:var(--bg);
+    border:1px solid var(--rule);
+    color:var(--ink);
+  }
+  .chip.num{background:var(--accent-soft);border-color:var(--accent-deep);font-weight:500}
+  .chip.green{background:var(--sage-soft);border-color:var(--sage);font-weight:500}
+
+  .builds{
+    padding:80px 0;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .builds-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:0;
+    border:1px solid var(--rule);
+    background:var(--rule);
+  }
+  .build{
+    background:var(--bg-card);
+    padding:36px;
+    position:relative;
+  }
+  .build-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:12px;
+    padding-bottom:12px;
+    border-bottom:1px dashed var(--ink-mute);
+  }
+  .build-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:48px;
+    font-weight:500;
+    color:var(--accent-deep);
+    line-height:1;
+    letter-spacing:-0.03em;
+  }
+  .build-status{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--sage);
+  }
+  .build-status::before{
+    content:"";
+    display:inline-block;
+    width:6px;height:6px;
+    background:var(--sage);
+    border-radius:50%;
+    margin-right:6px;
+    vertical-align:middle;
+  }
+
+  .build h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:26px;
+    margin:14px 0 12px;
+    letter-spacing:-0.015em;
+  }
+  .build .tagline{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    margin-bottom:18px;
+  }
+
+  .build-body{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+    margin-bottom:20px;
+  }
+
+  .build-stack{
+    display:flex;flex-wrap:wrap;gap:6px;
+    margin-bottom:20px;
+  }
+  .stack-chip{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    padding:3px 8px;
+    background:var(--ink);
+    color:var(--bg);
+    letter-spacing:0.03em;
+  }
+
+  .build-metrics{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));
+    gap:16px;
+    padding-top:16px;
+    border-top:1px solid var(--rule);
+  }
+  .metric .m-val{
+    font-family:'Fraunces', serif;
+    font-size:28px;
+    font-weight:500;
+    color:var(--ink);
+    letter-spacing:-0.02em;
+    line-height:1;
+  }
+  .metric .m-val em{
+    font-size:16px;
+    font-weight:400;
+    color:var(--accent-deep);
+    font-style:normal;
+  }
+  .metric .m-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-mute);
+    margin-top:6px;
+  }
+
+  .build-demo-placeholder{
+    margin-top:18px;
+    padding:12px 14px;
+    background:var(--bg-soft);
+    border:1px dashed var(--ink-mute);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--ink-mute);
+    letter-spacing:0.02em;
+  }
+  .build-demo-placeholder::before{
+    content:"▸ ";
+    color:var(--accent-deep);
+  }
+
+  .creds{
+    padding:72px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .creds-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+  }
+  .cred-col h4{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+    margin-bottom:20px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--rule);
+  }
+  .cred-item{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:16px;
+    padding:14px 0;
+    border-bottom:1px dashed var(--ink-mute);
+  }
+  .cred-item:last-child{border-bottom:none}
+  .cred-date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--ink-mute);
+  }
+  .cred-role{
+    font-family:'Fraunces', serif;
+    font-size:17px;
+    font-weight:500;
+  }
+  .cred-desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:4px;
+    line-height:1.5;
+  }
+
+  .colophon{
+    padding:48px 0 40px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    color:var(--ink-mute);
+    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .colophon a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent-deep)}
+  .colophon a:hover{color:var(--accent-deep)}
+
+  @media (max-width:900px){
+    .map-card, .map-card.wide, .map-card.full{grid-column:span 12}
+    .builds-grid{grid-template-columns:1fr}
+    .creds-grid{grid-template-columns:1fr;gap:32px}
+    .section-head, .thesis-body{grid-template-columns:1fr;gap:12px}
+    .applicant-strip{grid-template-columns:1fr 1fr}
+    .strip-cell{border-right:none;border-bottom:1px dashed var(--ink-mute);padding-right:0}
+  }
+  @media (max-width:540px){
+    .wrap{padding:0 20px}
+    .applicant-strip{grid-template-columns:1fr}
+    .build{padding:24px}
+    .masthead{padding:48px 0 40px}
+  }
+
+  .fade-up{opacity:0;transform:translateY(12px);animation:fadeUp 0.6s ease forwards}
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+  .d1{animation-delay:0.1s}.d2{animation-delay:0.2s}.d3{animation-delay:0.3s}.d4{animation-delay:0.4s}.d5{animation-delay:0.5s}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="topbar-left">
+      <span><span class="dot"></span> Application Dossier</span>
+      <span>Rushikesh Zoting → Methodology</span>
+    </div>
+    <div>Chief of Staff / Vol. 01</div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow fade-up"><span class="eyebrow-line"></span> For the attention of Julie Nguyen &amp; Team, Methodology <span class="eyebrow-line"></span></div>
+    <h1 class="headline fade-up d1">
+      You need a technical operator who <em>ships AI tools</em>, owns a P&amp;L, and grows into a <span class="underline">VP role.</span>
+    </h1>
+    <p class="sub fade-up d2">
+      I've spent the last year doing exactly that — reporting to the CEO of a Blume-backed startup, building LLM-powered systems across marketing, ops, and CX, and now spearheading the B2B GTM for the company's next revenue pillar. This is a JD-by-JD walk-through of why the fit is unusually tight.
+    </p>
+    <div class="applicant-strip fade-up d3">
+      <div class="strip-cell">
+        <div class="strip-label">Applicant</div>
+        <div class="strip-value">Rushikesh Zoting</div>
+      </div>
+      <div class="strip-cell">
+        <div class="strip-label">Current Role</div>
+        <div class="strip-value">GM, CEO's Office — SoulSensei</div>
+      </div>
+      <div class="strip-cell">
+        <div class="strip-label">Education</div>
+        <div class="strip-value">IIT Bombay · IIM Calcutta</div>
+      </div>
+      <div class="strip-cell">
+        <div class="strip-label">Location</div>
+        <div class="strip-value">Mumbai, IN · Remote-ready</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="thesis">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">§ 01 / Thesis</div>
+      <h2 class="section-title">The role describes a <em>rare animal.</em> So does my last twelve months.</h2>
+    </div>
+    <div class="thesis-body">
+      <div class="section-num mono">§ 01.1</div>
+      <div class="thesis-text">
+        <p class="lead">Most "Chief of Staff" candidates are strong on one axis — usually strategy, sometimes ops, rarely AI. Methodology's JD asks for all three, with the added filter that the person must <strong>ship working tools</strong>, not manage people who ship them.</p>
+        <p>At SoulSensei I've built four LLM-powered systems that run in production today: an NPS engine classifying 4,000+ responses, a creative automation engine generating Meta-ready statics from Pinterest references, an ops-facing editor powered by Claude Vision that lets non-designers update creatives, and a Meta ads intelligence engine that reverse-engineers competitor hooks and auto-generates campaign directions.</p>
+        <p>Each one maps directly to something in your JD — the Meta Ad Generator, the Email Intelligence Engine, the Homepage Optimisation Engine, the Partnership Tracker. I've built the same category of thing, four times, in the same calendar year.</p>
+
+        <div class="pull-quote">
+          <p>"A technical operator who can take over day-to-day operations, build AI tools to automate and optimise every marketing function, and grow into a VP role."</p>
+          <div class="attr">— Methodology, CoS JD</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="jd-map">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">§ 02 / JD Mapping</div>
+      <h2 class="section-title">Eight of your requirements, <em>already shipped.</em></h2>
+    </div>
+
+    <div class="map-grid">
+
+      <div class="map-card">
+        <span class="card-badge built">Built · SoulSensei</span>
+        <div class="jd-quote">"Build a Meta Ad Generator that produces 10x more creative variations at the quality level that currently requires the CEO's direct involvement."</div>
+        <h3>Creative Automation Engine</h3>
+        <p>Pinterest reference → Cloudinary API + Python pipeline + Google Drive/IAM → Meta-ready statics, at scale, with near-zero designer touch. Saves ~3 FTEs of designer bandwidth.</p>
+        <div class="proof-chips">
+          <span class="chip num">3 FTEs BW saved</span>
+          <span class="chip">Cloudinary</span>
+          <span class="chip">Python</span>
+          <span class="chip">Apps Script</span>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <span class="card-badge built">Built · SoulSensei</span>
+        <div class="jd-quote">"Email Intelligence Engine that analyses performance data, identifies patterns, generates on-brand copy..."</div>
+        <h3>NPS Engine + Intent Layer</h3>
+        <p>Same primitive — pattern-mining across user signal, LLM classification, auto-generated outputs routed to the right stakeholder. Recent upgrade: an intent layer on the same form captures inbound demand signals for upcoming cohort launches.</p>
+        <div class="proof-chips">
+          <span class="chip num">NPS 0 → 74</span>
+          <span class="chip num">4k+ responses</span>
+          <span class="chip">LLM APIs</span>
+          <span class="chip">Slack routing</span>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <span class="card-badge built">Built · SoulSensei</span>
+        <div class="jd-quote">"Homepage and Onramp Optimisation Engine that analyses drop-off data, generates split test hypotheses..."</div>
+        <h3>Conversion Funnel + WhatsApp CRM</h3>
+        <p>Designed the free-to-paid funnel driving 4.5% paid conversion; built WhatsApp CRM journeys for onboarding, re-engagement &amp; upsell. Same discipline as JD: map drop-offs, hypothesize, ship, measure.</p>
+        <div class="proof-chips">
+          <span class="chip num">₹8L+ CRM revenue</span>
+          <span class="chip num">4.5% paid conv</span>
+          <span class="chip">Lifecycle flows</span>
+          <span class="chip">A/B testing</span>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <span class="card-badge built">Built · SoulSensei</span>
+        <div class="jd-quote">"Partnership Execution Tracker purpose-built for contracts, R&amp;D timelines, shoot coordination, campaign launch checklists."</div>
+        <h3>CRM Rollout + CX SOPs</h3>
+        <p>Evaluated vendors, negotiated Bitrix at ~30% of market price, led integration, built customer support processes from scratch. Same muscle: purpose-built workflow tooling, not off-the-shelf.</p>
+        <div class="proof-chips">
+          <span class="chip num">~30% of market price</span>
+          <span class="chip">Bitrix</span>
+          <span class="chip">Vendor negotiation</span>
+        </div>
+      </div>
+
+      <div class="map-card wide">
+        <span class="card-badge match">Direct Match</span>
+        <div class="jd-quote">"Own and scale Meta advertising from $2.2K/day to $20–30K/day by managing campaign strategy, creative ideation, budget optimisation, and daily P&amp;L review."</div>
+        <h3>Meta Ads Intelligence Engine</h3>
+        <p>I built a tool that scrapes running ads from competitor Meta pages, decomposes hook / narrative / CTA structure, classifies win/loss patterns, and auto-generates session-category-specific ad directions. This is the upstream system for scaling Meta spend — you don't just need more budget, you need more winning creative per dollar. I've been solving that.</p>
+        <div class="proof-chips">
+          <span class="chip num">45 campaigns powered</span>
+          <span class="chip">LLM APIs</span>
+          <span class="chip">Competitor decomposition</span>
+          <span class="chip">Direction generation</span>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <span class="card-badge built">Built · SoulSensei</span>
+        <div class="jd-quote">"Reduce dependency on manual production... use AI to generate on-brand creative at scale."</div>
+        <h3>Ops-Facing Creative Editor</h3>
+        <p>Claude Vision API + Apps Script + Python: lets the ops team edit copy and visuals on existing creatives without a designer in the loop. Designers freed for higher-value work.</p>
+        <div class="proof-chips">
+          <span class="chip num">Designer leverage</span>
+          <span class="chip">Claude Vision API</span>
+          <span class="chip">Apps Script</span>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <span class="card-badge match">Direct Match</span>
+        <div class="jd-quote">"Own the product backlog... shipping landing pages, features, and optimisations with a bias toward speed."</div>
+        <h3>Product Ownership @ Creditas</h3>
+        <p>Owned product features E2E for 30M+ users. Designed a settlement feature generating ₹9Cr+ in collections, a language feature lifting inactive user revenue 12%, A/B-tested landing pages (13% CTR lift). 40+ meetings with CXOs.</p>
+        <div class="proof-chips">
+          <span class="chip num">₹9Cr+ collections</span>
+          <span class="chip num">13% CTR lift</span>
+          <span class="chip">A/B testing</span>
+          <span class="chip">PRDs · wireframes</span>
+        </div>
+      </div>
+
+      <div class="map-card full">
+        <span class="card-badge match">Direct Match</span>
+        <div class="jd-quote">"Proven track record of owning a P&amp;L-driving function — not just executing tasks but making decisions that moved a business metric."</div>
+        <h3>B2B GTM · Foundation Five Funnel · AmEx Credit Strategy</h3>
+        <p>Three revenue-adjacent ownerships: (1) Spearheaded SoulSensei's B2B GTM across 3 verticals — real estate, corporate wellness, EdTech — adding ₹5L+ in monthly revenue. (2) Designed the F5 upsell journey driving ₹3L+ at 4.5% paid conversion. (3) At American Express, shaped authorization override frameworks across ₹6.5Cr+ PTI and identified model tuning that reduced ₹80Cr write-off exposure. Each one connected a decision to a number.</p>
+        <div class="proof-chips">
+          <span class="chip num">₹5L+ monthly B2B</span>
+          <span class="chip num">₹3L+ F5 revenue</span>
+          <span class="chip num">₹80Cr write-off reduced</span>
+          <span class="chip green">Blume-backed startup</span>
+          <span class="chip green">AmEx · IIM-C</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="builds">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">§ 03 / Shipped Builds</div>
+      <h2 class="section-title">Four LLM-powered systems. <em>In production.</em> Today.</h2>
+    </div>
+
+    <div class="builds-grid">
+
+      <div class="build">
+        <div class="build-head">
+          <div class="build-num">01</div>
+          <div class="build-status">Running in production</div>
+        </div>
+        <div class="tagline">Marketing Intelligence · SoulSensei</div>
+        <h3>Meta Ads Intelligence Engine</h3>
+        <p class="build-body">Scrapes running ads from competitor Meta pages, decomposes each ad into hook / narrative / CTA structure, classifies win/loss patterns using LLM analysis, and auto-generates fresh ad directions for each of our session categories. Replaces "gut feel + agency brief" with a data-native creative pipeline.</p>
+        <div class="build-stack">
+          <span class="stack-chip">LLM APIs</span>
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">Meta Ads Library</span>
+          <span class="stack-chip">Prompt Engineering</span>
+        </div>
+        <div class="build-metrics">
+          <div class="metric"><div class="m-val">45</div><div class="m-label">Campaigns Powered</div></div>
+          <div class="metric"><div class="m-val">E2E</div><div class="m-label">Decompose → Direction</div></div>
+          <div class="metric"><div class="m-val">LLM</div><div class="m-label">Pattern Engine</div></div>
+        </div>
+        <div class="build-demo-placeholder">Loom walkthrough + sample output coming shortly</div>
+      </div>
+
+      <div class="build">
+        <div class="build-head">
+          <div class="build-num">02</div>
+          <div class="build-status">Running in production</div>
+        </div>
+        <div class="tagline">Creative Automation · SoulSensei</div>
+        <h3>Pinterest → Meta Static Engine</h3>
+        <p class="build-body">Takes a Pinterest reference image, applies brand tokens via Cloudinary transformations, pipes through Python + Google Apps Script, lands the asset in the right Drive folder with correct IAM — producing on-brand Meta-ready statics without a designer in the loop.</p>
+        <div class="build-stack">
+          <span class="stack-chip">Cloudinary API</span>
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">Google Apps Script</span>
+          <span class="stack-chip">Drive API · IAM</span>
+        </div>
+        <div class="build-metrics">
+          <div class="metric"><div class="m-val">3<em> FTEs</em></div><div class="m-label">Designer BW Saved</div></div>
+          <div class="metric"><div class="m-val">10x</div><div class="m-label">Variation Velocity</div></div>
+          <div class="metric"><div class="m-val">0</div><div class="m-label">Designer Touches</div></div>
+        </div>
+        <div class="build-demo-placeholder">Before/after gallery + pipeline diagram coming shortly</div>
+      </div>
+
+      <div class="build">
+        <div class="build-head">
+          <div class="build-num">03</div>
+          <div class="build-status">Running in production</div>
+        </div>
+        <div class="tagline">Creative Ops · SoulSensei</div>
+        <h3>Ops-Facing Creative Editor</h3>
+        <p class="build-body">Claude Vision API reads an existing creative, identifies editable copy and layout regions, exposes them to ops users through a simple interface. The ops team edits copy on live creatives themselves; designers get reclaimed bandwidth for higher-leverage work.</p>
+        <div class="build-stack">
+          <span class="stack-chip">Claude Vision API</span>
+          <span class="stack-chip">Apps Script</span>
+          <span class="stack-chip">Python</span>
+        </div>
+        <div class="build-metrics">
+          <div class="metric"><div class="m-val">Ops</div><div class="m-label">Primary User</div></div>
+          <div class="metric"><div class="m-val">↑</div><div class="m-label">Designer Leverage</div></div>
+          <div class="metric"><div class="m-val">Live</div><div class="m-label">Creative Editing</div></div>
+        </div>
+        <div class="build-demo-placeholder">Tool walkthrough coming shortly</div>
+      </div>
+
+      <div class="build">
+        <div class="build-head">
+          <div class="build-num">04</div>
+          <div class="build-status">Running in production</div>
+        </div>
+        <div class="tagline">Voice of Customer · SoulSensei</div>
+        <h3>NPS Engine + Intent Layer</h3>
+        <p class="build-body">Consolidates 4,000+ feedback responses, classifies them by theme and sentiment via LLM APIs, routes real-time insights to the right stakeholder on Slack. Recent upgrade: an intent layer on the same form captures inbound demand signals for upcoming cohort launches — turning feedback infra into a lead channel.</p>
+        <div class="build-stack">
+          <span class="stack-chip">LLM APIs</span>
+          <span class="stack-chip">Apps Script</span>
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">Slack API</span>
+        </div>
+        <div class="build-metrics">
+          <div class="metric"><div class="m-val">0→74</div><div class="m-label">NPS Scaled</div></div>
+          <div class="metric"><div class="m-val">4,000<em>+</em></div><div class="m-label">Responses Classified</div></div>
+          <div class="metric"><div class="m-val">&lt;min</div><div class="m-label">Insight → Stakeholder</div></div>
+        </div>
+        <div class="build-demo-placeholder">Architecture diagram + sample Slack routing coming shortly</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="creds">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">§ 04 / Track Record</div>
+      <h2 class="section-title">The path here was <em>deliberately wide.</em></h2>
+    </div>
+
+    <div class="creds-grid">
+      <div class="cred-col">
+        <h4>Experience</h4>
+        <div class="cred-item">
+          <div class="cred-date">Feb'25 — Now</div>
+          <div>
+            <div class="cred-role">GM, CEO's Office — SoulSensei</div>
+            <div class="cred-desc">Blume + Bharat Founders Fund backed. Reports directly to CEO. Conversion, retention, AI, CRM, B2B strategy.</div>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-date">May'24 — Jan'25</div>
+          <div>
+            <div class="cred-role">Strategy Analyst — American Express</div>
+            <div class="cred-desc">Credit risk, authorization policy, acquisition analytics. ₹6.5Cr PTI framework, ₹80Cr write-off reduction identified.</div>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-date">Nov'21 — Jun'22</div>
+          <div>
+            <div class="cred-role">Business Analyst — Meesho</div>
+            <div class="cred-desc">Fraud detection + supplier analytics at 3Mn+ daily orders scale. ₹1.4Cr monthly GMV recovery via user blocking models.</div>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-date">Jul'21 — Nov'21</div>
+          <div>
+            <div class="cred-role">Business Analyst — Creditas Solutions</div>
+            <div class="cred-desc">Product ownership for 30M+ users. ₹9Cr+ settlement feature, 12% inactive user revenue lift, 40+ CXO meetings.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cred-col">
+        <h4>Pedigree &amp; Signal</h4>
+        <div class="cred-item">
+          <div class="cred-date">2022 — 2024</div>
+          <div>
+            <div class="cred-role">PGP · IIM Calcutta</div>
+            <div class="cred-desc">Amazon ACE top 6 of 145 campus teams. TEDxIIMC Marketing Head. Toastmasters VP — 242% membership growth.</div>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-date">2017 — 2021</div>
+          <div>
+            <div class="cred-role">B.Tech · IIT Bombay</div>
+            <div class="cred-desc">Co-founded Ayurewave — Eureka semi-finalist, top 4 of 10k+. Led 25+ member maintenance team.</div>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-date">2021</div>
+          <div>
+            <div class="cred-role">FLY Leadership Program — CMI, USA</div>
+            <div class="cred-desc">1 of 35 selected from 15,000+ applicants. Fully funded by IIT Bombay.</div>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-date">5.8M meals · 48 states</div>
+          <div>
+            <div class="cred-role">Why Methodology, Specifically</div>
+            <div class="cred-desc">I've spent 20 years practicing and teaching the wellness side of this equation. Working on the food-tech engine that reaches people at scale — with a CEO who's been at this for 12 years — is a bet I would make even if the JD fit were narrower.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap colophon">
+  <div>Set in Fraunces &amp; JetBrains Mono</div>
+  <div><a href="mailto:work.rushikesh@gmail.com">work.rushikesh@gmail.com</a> · +91 87881 56985</div>
+</div>
+
+</body>
+</html>
